@@ -1,0 +1,5 @@
+ls -p | grep -v / | while read file_name;
+do
+    # ls "$file_name" | xargs echo
+    ls -a "$file_name" | xargs exa --icons 
+done

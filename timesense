@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while true;
+do
+    time="$( date | awk '{print $5}' | cut -d: -f1-2 )"
+    notify-send "$time"
+    sleep 300
+done

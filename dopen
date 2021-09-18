@@ -1,0 +1,8 @@
+#!/bin/bash
+
+relative_file_path="$(find . -type f | fzf)"
+if [[ -z "$relative_file_path" ]]; then
+    echo "please select some file."
+else
+    /usr/local/bin/dragon "$relative_file_path"
+fi

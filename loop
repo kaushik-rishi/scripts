@@ -1,0 +1,12 @@
+#!/bin/bash
+
+INTERVAL=2
+count=0
+while true;
+do
+	printf "\033c"
+	echo "#$count"
+	"$@"
+	sleep "$INTERVAL"
+	count=$((count+1))
+done

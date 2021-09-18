@@ -7,8 +7,5 @@
 # BUG: History command not working in bash scripts
 # history | awk '{$1=""; print $0}' | awk '{$1=$1; print}' | dmenu
 
-
-selected_command=$(dmenu < ~/.bash_history)
+selected_command=$(uniq ~/.bash_history | dmenu)
 copyq copy "$selected_command" > /dev/null
-
-
