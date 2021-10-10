@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Open a terminal window or a file manager in the same directory as the currently active window.
+
+scrn_active_windows_id=$(xdotool getactivewindow)
+scrn_active_windows_pid=$(xdotool getwindowpid $scrn_active_windows_id )
+scrn_active_windows_dir=$(readlink /proc/"$scrn_active_windows_pid"/cwd || echo $HOME)
+exo-open --working-directory "$scrn_active_windows_dir" --launch "$1"
